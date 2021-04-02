@@ -57,7 +57,7 @@ extern "C" {
 /**
  * Minimum interrupt number.
  */
-#define OS_HWI_MIN                      32
+#define OS_HWI_MIN                      0
 /**
  * Maximum usable interrupt number.
  */
@@ -98,7 +98,7 @@ extern "C" {
 #define HRTIMER_TIMER_REG_BASE    TIMER3_REG_BASE /* timer for hrtimer */
 #define HRTIMER_TIMER_ENABLE      TIMER3_ENABLE
 
-#define LOSCFG_BASE_CORE_TICK_HW_TIME  YES
+#define LOSCFG_BASE_CORE_TICK_HW_TIME   NO
 #define NUM_HAL_INTERRUPT_TIMER         NUM_HAL_INTERRUPT_TIMER0
 #define NUM_HAL_INTERRUPT_HRTIMER       NUM_HAL_INTERRUPT_TIMER3
 
