@@ -40,7 +40,7 @@ extern "C" {
  * Minimum interrupt number.
  */
 
-#define OS_HWI_MIN                      32
+#define OS_HWI_MIN                      0
 
 /**
  * Maximum usable interrupt number.
