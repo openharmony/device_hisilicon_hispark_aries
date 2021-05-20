@@ -109,6 +109,7 @@ extern void CatLogShell(void);
 void SystemInit(void)
 {
     InitRebootHook();
+
 #ifdef LOSCFG_PLATFORM_HISI_AMP
     extern int _ipcm_vdd_init(void);
     dprintf("ipcm init ...\n");
@@ -129,12 +130,6 @@ void SystemInit(void)
     dprintf("dev urandom init ...\n");
     PlatformRandomOperationsInit();
     DevUrandomRegister();
-#endif
-
-#ifdef LOSCFG_FS_PROC
-    dprintf("proc fs init ...\n");
-    extern void ProcFsInit(void);
-    ProcFsInit();
 #endif
 
 #ifdef LOSCFG_DRIVERS_MMC
@@ -181,7 +176,6 @@ void SystemInit(void)
 #ifdef LOSCFG_DRIVERS_MTD_SPI_NOR
     dprintf("spi nor flash init ...\n");
     extern int spinor_init(void);
-
     if (!spinor_init()) {
         dprintf("spinor_init ...\n");
     }
