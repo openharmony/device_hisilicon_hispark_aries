@@ -132,12 +132,6 @@ void SystemInit(void)
     DevUrandomRegister();
 #endif
 
-#ifdef LOSCFG_DRIVERS_MMC
-    dprintf("MMC dev init ...");
-    extern int SD_MMC_Host_init(void);
-    SD_MMC_Host_init();
-#endif
-
 #ifdef LOSCFG_DRIVERS_MEM
     dprintf("dev mem init ...\n");
     DevMemRegister();
