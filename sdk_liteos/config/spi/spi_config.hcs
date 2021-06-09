@@ -14,6 +14,7 @@ root {
                 fifoSize = 256;
                 numCs = 1;
                 regBase = 0x12070000;
+                irqNum = 46;
                 REG_CRG_SPI = 0x120101bc;    /* CRG_REG_BASE(0x12010000) + 0x01bc */
                 CRG_SPI_CKEN = 0;
                 CRG_SPI_RST = 0;
@@ -38,6 +39,7 @@ root {
                 MISC_CTRL_SPI_CS_SHIFT = 2; /* 2 */
                 match_attr = "hisilicon_hi35xx_spi_1";
                 regBase = 0x12071000;
+                irqNum = 47;
             }
         }
     }
