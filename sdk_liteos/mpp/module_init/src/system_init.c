@@ -51,13 +51,6 @@
 #include "implementation/usb_init.h"
 #endif
 
-#ifdef LOSCFG_STORAGE_EMMC
-#include "mmc/block.h"
-#include "inode/inode.h"
-#define EMMC_SEC_SIZE 512
-#define EMMC_UBOOT_SIZE 0x100000
-#endif
-
 #ifdef LOSCFG_DRIVERS_NETDEV
 #include "lwip/tcpip.h"
 #include "lwip/netif.h"
