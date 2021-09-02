@@ -161,6 +161,14 @@ void SystemInit(void)
     dprintf("calling SDK_init form HISI_SDK done!");
 #endif
 
+#ifdef LOSCFG_DRIVERS_HDF
+    dprintf("DeviceManagerStart start ...\n");
+    if (DeviceManagerStart()) {
+        PRINT_ERR("No drivers need load by hdf manager!");
+    }
+    dprintf("DeviceManagerStart end ...\n");
+#endif
+
 #ifdef LOSCFG_PLATFORM_ROOTFS
     dprintf("OsMountRootfs start ...\n");
     if (LOS_GetCmdLine()) {
@@ -175,13 +183,6 @@ void SystemInit(void)
     dprintf("OsMountRootfs end ...\n");
 #endif
 
-#ifdef LOSCFG_DRIVERS_HDF
-    dprintf("DeviceManagerStart start ...\n");
-    if (DeviceManagerStart()) {
-        PRINT_ERR("No drivers need load by hdf manager!");
-    }
-    dprintf("DeviceManagerStart end ...\n");
-#endif
 #ifdef LOSCFG_DRIVERS_HDF_PLATFORM_UART
     dprintf("virtual_serial_init start ...\n");
     if (virtual_serial_init(TTY_DEVICE) != 0) {
