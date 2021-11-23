@@ -1,0 +1,10 @@
+{
+  "parts": {
+    "device_hispark_aries": {
+      "module_list": [
+        "//device/hisilicon/hispark_aries:hispark_aries"
+      ]
+    }
+  },
+  "subsystem": "device_hispark_aries"
+}
